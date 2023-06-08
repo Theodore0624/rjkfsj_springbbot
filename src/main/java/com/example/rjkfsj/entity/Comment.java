@@ -17,8 +17,11 @@ public class Comment {
     //    @TableField("")     //如果表里不叫username
     private int goodgrade;
     private String commentword;
-    private String buypeople;
     private int goodid;
     private int gradelevel;
+    private int peopleid;
+
+    @TableField(exist = false)
+    private List<Allgoods> allgoods;
 
 }

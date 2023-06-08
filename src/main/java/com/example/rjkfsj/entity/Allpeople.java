@@ -5,25 +5,17 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.Getter;
 
 import java.sql.Date;
 import java.util.List;
 
 @Data
-@TableName("users")     //如果数据库不叫User的话
-public class User {
+@TableName("allpeople")     //如果数据库不叫User的话
+public class Allpeople {
     @TableId(type = IdType.AUTO)    //提醒程序id自增
-    private int id;
+    private int peopleid;
 //    @TableField("")     //如果表里不叫username
-    private String username;
-    private String password;
-    private Date birthday;
+    private String peoplename;
 
-
-
-    //描述用户的所有订单
-    @TableField(exist = false)  //↓名词在表里不存在
-    private List<Order> order;
 
 }

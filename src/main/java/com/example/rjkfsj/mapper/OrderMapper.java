@@ -2,7 +2,7 @@ package com.example.rjkfsj.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.rjkfsj.entity.Order;
-import com.example.rjkfsj.entity.User;
+import com.example.rjkfsj.entity.Allpeople;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public interface OrderMapper extends BaseMapper<Order> {
                     @Result(column = "id",property = "id"),     //前面是表 后面是类
                     @Result(column = "time",property = "time"),
                     @Result(column = "total",property = "total"),
-                    @Result(column = "uid",property = "user",javaType = User.class,     //根据id查order表
+                    @Result(column = "uid",property = "user",javaType = Allpeople.class,     //根据id查order表
                             one = @One(select = "com.example.rjkfsj.mapper.UserMapper.selectById"))
 
             })

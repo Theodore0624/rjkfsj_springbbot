@@ -22,10 +22,11 @@ public class Payment {
     private String intro;
     private int num;
     //单价
-    private int nowprice;
+    private double allprice;
     //店铺名称
     private int shopid;
-
+    private int buycondition;
+    private int peopleid;
     @TableField(exist = false)
     private List<Shop> shops;
 }

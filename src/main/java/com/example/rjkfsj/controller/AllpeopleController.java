@@ -4,9 +4,8 @@ package com.example.rjkfsj.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.rjkfsj.entity.User;
-import com.example.rjkfsj.mapper.UserMapper;
-import io.swagger.annotations.ApiOperation;
+import com.example.rjkfsj.entity.Allpeople;
+import com.example.rjkfsj.mapper.AllpeopleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,35 +13,27 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-public class Usercontroller {
+public class AllpeopleController {
     @Autowired      //将对象从Usermapper里自动注入
-    private UserMapper userMapper;
-
-    @GetMapping("/user/findAll")
-    public List<User> find(){
-        return userMapper.selectAllUserandOrder();
-    }
-
-    @GetMapping("/user/username")
-    public List<User> finduser(){
-        QueryWrapper<User> queryWrapper = new QueryWrapper();     //mybatis 数据库方法
-        queryWrapper.eq("username","zhangsan");
-        return userMapper.selectList(queryWrapper);
-    }
-
-    @GetMapping("/user/page")
-    public IPage separate_page(){
-        Page<User> page = new Page<>(0,2); //(从哪条开始取,每页取几条)
-        IPage iPage = userMapper.selectPage(page,null);     //null里可以写查询条件
-        return iPage;
-    }
+    private AllpeopleMapper allpeopleMapper;
 
 
 
-@GetMapping("/getuser")
-    public List web_getuser(){
-        return userMapper.selectList(null);
-}
+//    @GetMapping("/user/username")
+//    public List<Allpeople> finduser(){
+//        QueryWrapper<Allpeople> queryWrapper = new QueryWrapper();     //mybatis 数据库方法
+//        queryWrapper.eq("username","zhangsan");
+//        return userMapper.selectList(queryWrapper);
+//    }
+
+//    @GetMapping("/user/page")
+//    public IPage separate_page(){
+//        Page<Allpeople> page = new Page<>(0,2); //(从哪条开始取,每页取几条)
+//        IPage iPage = userMapper.selectPage(page,null);     //null里可以写查询条件
+//        return iPage;
+//    }
+
+
 
 
 

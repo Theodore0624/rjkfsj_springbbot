@@ -26,4 +26,9 @@ public class CommentController {
         int gradelevel = postlevel.getGradelevel();
         return commentMappers.getlevel(goodid,gradelevel);
     }
+
+@GetMapping("/comment/getmy/{peopleid}")
+    public List<Comment> getpeopleid(@PathVariable int peopleid){
+        return commentMappers.getpeople(peopleid);
+}
 }

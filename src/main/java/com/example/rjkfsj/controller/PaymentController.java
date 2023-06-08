@@ -19,4 +19,6 @@ public class PaymentController {
         return paymentMapper.findboughtbypeople(peopleid);
     }
 
+
+
 }

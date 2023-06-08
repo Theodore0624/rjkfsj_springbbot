@@ -28,6 +28,27 @@ public class AllgoodsController {
     @GetMapping("/allgoods/up")
     public List<Allgoods> upgood(){return allgoodsMapper.upprice();}
 
+
+    @GetMapping("/allgoods/down")
+    public List<Allgoods> downgood(){return allgoodsMapper.downprice();}
+
+    @GetMapping("/allgoods/people")
+    public List<Allgoods> people(){return allgoodsMapper.downpeople();}
+
+    @GetMapping("/allgoods/grade")
+    public List<Allgoods> grades(){return allgoodsMapper.grade();}
+
+
     @PostMapping("/allgoods/{intro}")
     public List<Allgoods> findname(@PathVariable String intro){return allgoodsMapper.findbyname(intro);}
+
+    @GetMapping("/allgoods/{id}")
+    public List<Allgoods> findshopname(@PathVariable int id){
+        return allgoodsMapper.findshop(id);
+    }
+
+    @GetMapping("/allgoods/get/{goodid}")
+    public List<Allgoods> findshopid(@PathVariable int goodid){
+        return allgoodsMapper.findbyshopid(goodid);
+    }
 }

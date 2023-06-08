@@ -1,10 +1,13 @@
 package com.example.rjkfsj.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @Data
 @TableName("allgoods")
@@ -20,4 +23,6 @@ public class Allgoods {
     private int buypeople;
     private int shopid;
     private int historynum;
+    @TableField(exist = false)
+    private List<Shop> shops;
 }

@@ -17,6 +17,8 @@ public interface PaymentMapper extends BaseMapper<Payment> {
             @Result(column = "num",property = "num"),
             @Result(column = "nowprice",property = "nowprice"),
             @Result(column = "shopid",property = "shopid"),
+            @Result(column = "buycondition",property = "buycondition"),
+            @Result(column = "peopleid",property = "peopleid"),
             @Result(column = "shopid",property = "shops",javaType = List.class,
                 many = @Many(select = "com.example.rjkfsj.mapper.ShopMapper.findshop")),
 })
